@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wazarat Ali Hussain — Fintech · Digital Assets · Agentic Commerce</title>
-<meta name="description" content="Wazarat Ali Hussain researches and innovates at the edge of modern finance — fintech, digital assets, and agentic commerce. Founder of CanHav Crypto Research.">
+<title>Wazarat Ali Hussain · Fintech · Digital Assets · Agentic Commerce</title>
+<meta name="description" content="Wazarat Ali Hussain researches and innovates at the edge of modern finance: fintech, digital assets, and agentic commerce. Founder of CanHav Crypto Research.">
 <link rel="canonical" href="https://wazarat.io/">
 <meta name="theme-color" content="#081120">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wazarat.io/">
-<meta property="og:title" content="Wazarat Ali Hussain — Fintech · Digital Assets · Agentic Commerce">
+<meta property="og:title" content="Wazarat Ali Hussain · Fintech · Digital Assets · Agentic Commerce">
 <meta property="og:description" content="I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.">
 <meta property="og:image" content="https://wazarat.io/assets/wazarat-arbitrum.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@wazarat">
-<meta name="twitter:title" content="Wazarat Ali Hussain — Fintech · Digital Assets · Agentic Commerce">
+<meta name="twitter:title" content="Wazarat Ali Hussain · Fintech · Digital Assets · Agentic Commerce">
 <meta name="twitter:description" content="I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.">
 <meta name="twitter:image" content="https://wazarat.io/assets/wazarat-arbitrum.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23081120'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' fill='%237dd3fc' text-anchor='middle'%3E%5Bw%5D%3C/text%3E%3C/svg%3E">
@@ -27,6 +27,30 @@ html{scroll-behavior:smooth}
 a{color:#7dd3fc;text-decoration:none}
 a:hover{color:#bae6fd}
 .yt-facade{position:absolute;inset:0;cursor:pointer;border:0;padding:0;background:none;width:100%;height:100%}
+.journey{--jg:clamp(16px,3vw,28px);display:grid;grid-template-columns:repeat(3,1fr);gap:0 var(--jg)}
+.journey-step{position:relative;display:grid;grid-template-rows:subgrid;grid-row:span 4;align-content:start;gap:8px;text-align:left;background:none;border:0;padding:0;margin:0;cursor:pointer;font:inherit;color:inherit;opacity:.68;border-radius:6px;transition:opacity .16s ease,transform .16s ease}
+.journey-step.is-active,.journey-step:hover,.journey-step:focus-visible{opacity:1}
+@media (hover:hover){.journey-step:hover{transform:translateY(-2px)}}
+.journey-step:focus-visible{outline:2px solid #7dd3fc;outline-offset:8px}
+.journey-track{position:relative;display:block;height:14px;margin-bottom:6px}
+.journey-track::before{content:"";position:absolute;left:14px;right:calc(var(--jg) * -1);top:6px;height:2px;background:rgba(125,211,252,.2);transition:background .16s ease}
+.journey-step:last-child .journey-track::before{display:none}
+.journey-step:has(~ .journey-step.is-active) .journey-track::before,.journey-step:has(~ .journey-step:hover) .journey-track::before{background:rgba(125,211,252,.6)}
+.journey-node{position:absolute;left:0;top:0;width:14px;height:14px;box-sizing:border-box;border-radius:50%;border:2px solid #7dd3fc;background:#081120;transition:background .16s ease,box-shadow .16s ease}
+.journey-step.is-active .journey-node,.journey-step:hover .journey-node,.journey-step:focus-visible .journey-node{background:#7dd3fc;box-shadow:0 0 0 4px rgba(125,211,252,.16)}
+.journey-stage{display:block;font:600 clamp(16px,1.9vw,19px)/1.2 'Space Grotesk',sans-serif;color:#7dd3fc;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+.journey-sub{display:block;font:500 11px 'IBM Plex Mono',monospace;color:#8fa5bd;letter-spacing:.12em}
+.journey-body{display:block;margin-top:4px;padding-top:12px;border-top:1px solid rgba(125,211,252,.18);font:400 13.5px/1.6 system-ui,sans-serif;color:#a9bdd4;text-wrap:pretty;transition:border-color .16s ease}
+.journey-step.is-active .journey-body,.journey-step:hover .journey-body{border-top-color:rgba(125,211,252,.5)}
+@media (max-width:720px){
+.journey{grid-template-columns:1fr;gap:28px 0}
+.journey-step{display:flex;flex-direction:column;grid-row:auto;padding-left:30px}
+.journey-track{position:absolute;left:0;top:2px;bottom:0;height:auto;margin:0;width:14px}
+.journey-track::before{left:6px;right:auto;top:14px;bottom:-30px;width:2px;height:auto}
+.journey-step:last-child .journey-track::before{display:none}
+.journey-step:hover{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.journey-step,.journey-node,.journey-track::before,.journey-body{transition:none}}
 @media (max-width:560px){
 .hero-stats{grid-template-columns:1fr 1fr}
 .hero-stats>div:last-child{grid-column:1/-1}
@@ -50,7 +74,7 @@ a:hover{color:#bae6fd}
 
 <header id="top" style="padding:clamp(40px,7vw,80px) clamp(20px,4vw,40px) clamp(32px,5vw,48px);max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,44px);align-items:center">
 <div style="display:flex;flex-direction:column;gap:20px">
-<a href="mailto:waz@wazarat.io" style="display:inline-flex;flex-wrap:wrap;gap:2px 8px;align-items:center;align-self:flex-start;font:500 12px 'IBM Plex Mono',monospace;color:#4ade80;text-decoration:none;padding:6px 12px;border:1px solid rgba(74,222,128,.25);border-radius:999px;background:rgba(74,222,128,.06)"><span style="width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block"></span>OPEN TO OPPORTUNITIES<span style="color:rgba(74,222,128,.5)">·</span><span style="text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(74,222,128,.45)">waz@wazarat.io</span></a>
+<div style="display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font:500 12px 'IBM Plex Mono',monospace;border-left:2px solid rgba(125,211,252,.35);padding-left:12px"><span style="white-space:nowrap"><span style="color:#5f7a97">[ </span><span style="color:#7dd3fc;letter-spacing:.08em">OPEN TO OPPORTUNITIES</span><span style="color:#5f7a97"> ]</span></span><span style="color:#a9bdd4">If I can help, please reach out!</span><a href="mailto:waz@wazarat.io" style="color:#7dd3fc;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(125,211,252,.45)">waz@wazarat.io</a></div>
 <h1 style="margin:0;font:700 clamp(38px,6vw,58px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.02em;color:#f2f6fb;text-wrap:balance">Wazarat Ali Hussain</h1>
 <div style="font:500 clamp(12px,1.6vw,14px) 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.1em">FINTECH · DIGITAL ASSETS · AGENTIC COMMERCE</div>
 <p style="margin:0;font:400 clamp(15px,1.8vw,16px)/1.6 system-ui,sans-serif;color:#a9bdd4;max-width:580px;text-wrap:pretty">I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.</p>
@@ -62,15 +86,15 @@ a:hover{color:#bae6fd}
 <div style="border:1px solid rgba(125,211,252,.18);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
 <div style="font:700 22px 'Space Grotesk',sans-serif;color:#7dd3fc;letter-spacing:-.01em">4.09<span style="font-size:14px;color:#5f7a97">/4.30</span></div>
 <p style="margin:0;font:400 12px/1.5 system-ui,sans-serif;color:#a9bdd4"><span style="color:#e8eef6;font-weight:600">CGPA</span> · Master's in Financial Innovation &amp; Technology, Queen's University</p>
-<span style="font:500 12px 'IBM Plex Mono',monospace;color:#4ade80;letter-spacing:.14em;margin-top:auto">— 2025</span></div>
+<span style="font:500 12px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.14em;margin-top:auto">2025</span></div>
 <div style="border:1px solid rgba(125,211,252,.18);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
 <div style="font:700 22px 'Space Grotesk',sans-serif;color:#7dd3fc;letter-spacing:-.01em">1st</div>
 <p style="margin:0;font:400 12px/1.5 system-ui,sans-serif;color:#a9bdd4"><span style="color:#e8eef6;font-weight:600">ETHDenver Hackathon</span> · Application for Agentic Society on Hedera</p>
-<span style="font:500 12px 'IBM Plex Mono',monospace;color:#4ade80;letter-spacing:.14em;margin-top:auto">— 2026</span></div>
+<span style="font:500 12px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.14em;margin-top:auto">2026</span></div>
 <div style="border:1px solid rgba(125,211,252,.18);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:5px">
 <div style="font:700 22px 'Space Grotesk',sans-serif;color:#7dd3fc;letter-spacing:-.01em"><span style="font-size:14px;color:#5f7a97">USD </span>6,000</div>
 <p style="margin:0;font:400 12px/1.5 system-ui,sans-serif;color:#a9bdd4"><span style="color:#e8eef6;font-weight:600">Arbitrum Founder House</span> · Agentic Track Award in invite only hackathon</p>
-<span style="font:500 12px 'IBM Plex Mono',monospace;color:#4ade80;letter-spacing:.14em;margin-top:auto">— 2026</span></div>
+<span style="font:500 12px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.14em;margin-top:auto">2026</span></div>
 </div>
 </div>
 <div style="display:flex;flex-direction:column;border:1px solid rgba(125,211,252,.25);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)">
@@ -82,20 +106,26 @@ a:hover{color:#bae6fd}
 <section id="about" style="max-width:1080px;margin:0 auto;padding:clamp(48px,7vw,80px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:24px">
 <h2 style="margin:0;font:500 13px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.14em">01 · ABOUT</h2>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div style="font:600 clamp(17px,2.4vw,22px) 'Space Grotesk',sans-serif;color:#e8eef6;letter-spacing:.01em;text-wrap:balance">THE JOURNEY · <span style="color:#7dd3fc">FINANCE</span> <span style="color:#5f7a97">→</span> <span style="color:#7dd3fc">FINTECH</span> <span style="color:#5f7a97">→</span> <span style="color:#7dd3fc">DIGITAL ASSETS &amp; AGENTIC COMMERCE</span></div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(16px,3vw,28px)">
-<div style="border-top:2px solid rgba(125,211,252,.35);padding-top:16px;display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;align-items:baseline;gap:8px;font:500 11px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.12em"><span>01 · TRADITIONAL FINANCE</span><span style="margin-left:auto;color:#5f7a97">→</span></div>
-<p style="margin:0;font:400 13.5px/1.6 system-ui,sans-serif;color:#a9bdd4;text-wrap:pretty">Managed a large-scale operational shift at a traditional financial institution. This initiative successfully transitioned 20 distinct departments from an in-office environment to remote work settings.</p>
-</div>
-<div style="border-top:2px solid rgba(125,211,252,.35);padding-top:16px;display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;align-items:baseline;gap:8px;font:500 11px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.12em"><span>02 · EMERGING TECH</span><span style="margin-left:auto;color:#5f7a97">→</span></div>
-<p style="margin:0;font:400 13.5px/1.6 system-ui,sans-serif;color:#a9bdd4;text-wrap:pretty">Applied technical coursework from the University of Toronto to transition into the tech sector. Over two years, I designed and bootstrapped a new product line to profitability.</p>
-</div>
-<div style="border-top:2px solid #7dd3fc;padding-top:16px;display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;align-items:baseline;gap:8px;font:500 11px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.12em"><span>03 · DIGITAL ASSETS</span></div>
-<p style="margin:0;font:400 13.5px/1.6 system-ui,sans-serif;color:#a9bdd4;text-wrap:pretty">Founded CanHav based on my research at the Smith School of Business, Queen's University. The platform focuses on agentic commerce, regulatory compliance, lending, leverage yield, and fixed income.</p>
-</div>
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#5f7a97;letter-spacing:.12em">THE JOURNEY</div>
+<div class="journey">
+<button type="button" class="journey-step" aria-pressed="false">
+<span class="journey-track" aria-hidden="true"><span class="journey-node"></span></span>
+<span class="journey-stage">Finance</span>
+<span class="journey-sub">01 · TRADITIONAL FINANCE</span>
+<span class="journey-body">Managed a large-scale operational shift at a traditional financial institution. This initiative successfully transitioned 20 distinct departments from an in-office environment to remote work settings.</span>
+</button>
+<button type="button" class="journey-step" aria-pressed="false">
+<span class="journey-track" aria-hidden="true"><span class="journey-node"></span></span>
+<span class="journey-stage">Fintech</span>
+<span class="journey-sub">02 · EMERGING TECH</span>
+<span class="journey-body">Applied technical coursework from the University of Toronto to transition into the tech sector. Over two years, I designed and bootstrapped a new product line to profitability.</span>
+</button>
+<button type="button" class="journey-step is-active" aria-pressed="true">
+<span class="journey-track" aria-hidden="true"><span class="journey-node"></span></span>
+<span class="journey-stage">Digital Assets &amp; Agentic Commerce</span>
+<span class="journey-sub">03 · DIGITAL ASSETS</span>
+<span class="journey-body">Founded CanHav based on my research at the Smith School of Business, Queen's University. The platform focuses on agentic commerce, regulatory compliance, lending, leverage yield, and fixed income.</span>
+</button>
 </div>
 <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
 <div style="font:500 11px 'IBM Plex Mono',monospace;color:#5f7a97;letter-spacing:.12em">TOOLS &amp; DOMAINS</div>
@@ -225,6 +255,16 @@ document.querySelectorAll('[data-yt]').forEach(function (box) {
     iframe.allowFullscreen = true;
     iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
     box.replaceChildren(iframe);
+  });
+});
+var steps = document.querySelectorAll('.journey-step');
+steps.forEach(function (step) {
+  step.addEventListener('click', function () {
+    steps.forEach(function (other) {
+      var on = other === step;
+      other.classList.toggle('is-active', on);
+      other.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
   });
 });
 </script>

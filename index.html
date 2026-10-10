@@ -18,10 +18,12 @@
 <meta name="twitter:description" content="I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.">
 <meta name="twitter:image" content="https://wazarat.io/assets/wazarat-arbitrum.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23081120'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' fill='%237dd3fc' text-anchor='middle'%3E%5Bw%5D%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/space-grotesk-var.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/ibm-plex-mono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/ibm-plex-mono-500.woff2) format('woff2')}
 body{margin:0;background:#081120;font-family:system-ui,sans-serif}
 html{scroll-behavior:smooth}
 a{color:#7dd3fc;text-decoration:none}
@@ -51,6 +53,20 @@ a:hover{color:#bae6fd}
 .journey-step:hover{transform:none}
 }
 @media (prefers-reduced-motion:reduce){.journey-step,.journey-node,.journey-track::before,.journey-body{transition:none}}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"h1" "tag" "img" "p" "btn" "stats";gap:20px}
+.hero-h1{grid-area:h1}.hero-tag{grid-area:tag}.hero-img{grid-area:img}.hero-p{grid-area:p}.hero-btn{grid-area:btn}.hero-stats{grid-area:stats}
+@media (min-width:880px){
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"h1 img" "tag img" "p img" "btn img" "stats img";column-gap:clamp(28px,4vw,44px);align-items:start}
+.hero-img{align-self:center}
+}
+.nav-toggle{display:none}
+@media (max-width:720px){
+.nav-toggle{display:inline-flex;align-items:center;font:500 12px 'IBM Plex Mono',monospace;color:#bcd0e5;background:none;border:1px solid rgba(188,208,229,.3);border-radius:6px;padding:6px 13px;cursor:pointer}
+.nav-links{display:none!important;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0!important;padding:8px 0 4px;border-top:1px solid rgba(125,211,252,.12);margin-top:6px}
+.nav-links.is-open{display:flex!important}
+.nav-links>a{padding:11px 2px;font-size:13px}
+.nav-ext{gap:10px!important;padding-top:10px}
+}
 @media (max-width:560px){
 .hero-stats{grid-template-columns:1fr 1fr}
 .hero-stats>div:last-child{grid-column:1/-1}
@@ -64,22 +80,23 @@ a:hover{color:#bae6fd}
 
 <nav style="position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px clamp(20px,4vw,40px);background:rgba(8,17,32,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(125,211,252,.15);font:500 12px 'IBM Plex Mono',monospace">
 <a href="#top" style="display:flex;align-items:center"><span style="color:#5f7a97">[ </span><span style="color:#7dd3fc;letter-spacing:.06em">wazarat</span><span style="color:#5f7a97"> ]</span></a>
-<div style="display:flex;gap:clamp(10px,2.5vw,22px);align-items:center;flex-wrap:wrap">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+<div class="nav-links" id="nav-links" style="display:flex;gap:clamp(10px,2.5vw,22px);align-items:center;flex-wrap:wrap">
 <a href="#about" style="color:#8fa5bd">About</a>
 <a href="#experience" style="color:#8fa5bd">Experience</a>
 <a href="#projects" style="color:#8fa5bd">Projects</a>
 <a href="#awards" style="color:#8fa5bd">Awards</a>
 <a href="#contact" style="color:#8fa5bd">Contact</a>
+<div class="nav-ext" style="display:flex;gap:clamp(10px,2.5vw,22px);align-items:center">
 <a href="https://www.linkedin.com/in/wazarat" target="_blank" rel="noopener" style="color:#bcd0e5;padding:6px 13px;border:1px solid rgba(188,208,229,.3);border-radius:6px">LinkedIn ↗</a>
 <a href="https://github.com/wazarat/" target="_blank" rel="noopener" style="color:#bcd0e5;padding:6px 13px;border:1px solid rgba(188,208,229,.3);border-radius:6px">GitHub ↗</a>
-</div></nav>
+</div></div></nav>
 
-<header id="top" style="padding:clamp(40px,7vw,80px) clamp(20px,4vw,40px) clamp(32px,5vw,48px);max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,44px);align-items:center">
-<div style="display:flex;flex-direction:column;gap:20px">
-<h1 style="margin:0;font:700 clamp(38px,6vw,58px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.02em;color:#f2f6fb;text-wrap:balance">Wazarat Ali Hussain</h1>
-<div style="font:500 clamp(12px,1.6vw,14px) 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.1em">FINTECH · DIGITAL ASSETS · AGENTIC COMMERCE</div>
-<p style="margin:0;font:400 clamp(15px,1.8vw,16px)/1.6 system-ui,sans-serif;color:#a9bdd4;max-width:580px;text-wrap:pretty">I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
+<header id="top" class="hero" style="padding:clamp(40px,7vw,80px) clamp(20px,4vw,40px) clamp(32px,5vw,48px);max-width:1080px;margin:0 auto">
+<h1 class="hero-h1" style="margin:0;font:700 clamp(38px,6vw,58px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.02em;color:#f2f6fb;text-wrap:balance">Wazarat Ali Hussain</h1>
+<div class="hero-tag" style="font:500 clamp(12px,1.6vw,14px) 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.1em">FINTECH · DIGITAL ASSETS · AGENTIC COMMERCE</div>
+<p class="hero-p" style="margin:0;font:400 clamp(15px,1.8vw,16px)/1.6 system-ui,sans-serif;color:#a9bdd4;max-width:580px;text-wrap:pretty">I research and innovate at the edge of modern finance, bridging traditional systems with decentralized technology.</p>
+<div class="hero-btn" style="display:flex;gap:12px;flex-wrap:wrap">
 <a href="mailto:waz@wazarat.io" style="font:600 14px 'Space Grotesk',sans-serif;color:#081120;background:#7dd3fc;padding:13px 24px;border-radius:8px">Contact me →</a>
 <a href="resume.html" style="font:600 14px 'Space Grotesk',sans-serif;color:#e8eef6;border:1px solid rgba(232,238,246,.35);padding:13px 24px;border-radius:8px">View Resume</a>
 </div>
@@ -97,8 +114,7 @@ a:hover{color:#bae6fd}
 <p style="margin:0;font:400 12px/1.5 system-ui,sans-serif;color:#a9bdd4"><span style="color:#e8eef6;font-weight:600">Arbitrum Founder House</span> · Agentic Track Award in invite only hackathon</p>
 <span style="font:500 12px 'IBM Plex Mono',monospace;color:#7dd3fc;letter-spacing:.14em;margin-top:auto">2026</span></div>
 </div>
-</div>
-<div style="display:flex;flex-direction:column;border:1px solid rgba(125,211,252,.25);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+<div class="hero-img" style="display:flex;flex-direction:column;border:1px solid rgba(125,211,252,.25);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)">
 <img src="assets/wazarat-arbitrum.jpg" alt="Wazarat presenting Agentic Integration in DeFi at Arbitrum Open House, London" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block">
 <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 16px;background:#0d2440;font:500 11px 'IBM Plex Mono',monospace"><span style="color:#bcd0e5">▶ PRESENTING AGENTIC INTEGRATION IN DEFI</span><span style="color:#5f7a97">ARBITRUM OPEN HOUSE · LONDON, UK</span></div>
 </div>
@@ -157,14 +173,14 @@ a:hover{color:#bae6fd}
 <div style="display:flex;flex-direction:column;gap:8px">
 <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(125,211,252,.2);aspect-ratio:16/9;background:#0d2440" data-yt="XPW9R8HqEec" data-yt-title="CanHav Demo">
 <button class="yt-facade" type="button" aria-label="Play video: CanHav Demo">
-<img src="https://i.ytimg.com/vi/XPW9R8HqEec/hqdefault.jpg" alt="CanHav demo video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
+<img src="assets/yt-XPW9R8HqEec.jpg" alt="CanHav demo video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
 <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:rgba(8,17,32,.75);border:1px solid rgba(125,211,252,.5);display:flex;align-items:center;justify-content:center;color:#7dd3fc;font-size:20px">▶</span></span>
 </button></div>
 <span style="font:500 11px 'IBM Plex Mono',monospace;color:#5f7a97">ARBITRUM FOUNDER HOUSE 2026 · LONDON, UK · CANHAV PRODUCT DEMO</span></div>
 <div style="display:flex;flex-direction:column;gap:8px">
 <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(125,211,252,.2);aspect-ratio:16/9;background:#0d2440" data-yt="Lr55wgKApmI" data-yt-title="Consensus 2025 pitch">
 <button class="yt-facade" type="button" aria-label="Play video: Consensus 2025 stablecoin pitch">
-<img src="https://i.ytimg.com/vi/Lr55wgKApmI/hqdefault.jpg" alt="Consensus 2025 stablecoin pitch" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
+<img src="assets/yt-Lr55wgKApmI.jpg" alt="Consensus 2025 stablecoin pitch" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
 <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:rgba(8,17,32,.75);border:1px solid rgba(125,211,252,.5);display:flex;align-items:center;justify-content:center;color:#7dd3fc;font-size:20px">▶</span></span>
 </button></div>
 <span style="font:500 11px 'IBM Plex Mono',monospace;color:#5f7a97">CONSENSUS 2025 · TORONTO, ON · MULTI-PEGGED STABLECOINS</span></div>
@@ -189,7 +205,7 @@ a:hover{color:#bae6fd}
 <article style="border:1px solid rgba(125,211,252,.18);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
 <div style="position:relative;aspect-ratio:16/9;background:#0d2440" data-yt="1y5wLkLmpkE" data-yt-title="NetRev capstone">
 <button class="yt-facade" type="button" aria-label="Play video: NetRev capstone">
-<img src="https://i.ytimg.com/vi/1y5wLkLmpkE/hqdefault.jpg" alt="NetRev capstone video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
+<img src="assets/yt-1y5wLkLmpkE.jpg" alt="NetRev capstone video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
 <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:rgba(8,17,32,.75);border:1px solid rgba(125,211,252,.5);display:flex;align-items:center;justify-content:center;color:#7dd3fc;font-size:20px">▶</span></span>
 </button></div>
 <div style="padding:20px 22px;display:flex;flex-direction:column;gap:8px">
@@ -198,7 +214,7 @@ a:hover{color:#bae6fd}
 <article style="border:1px solid rgba(125,211,252,.18);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
 <div style="position:relative;aspect-ratio:16/9;background:#0d2440" data-yt="aCUXMVrtdg0" data-yt-title="Fintech for food insecurity">
 <button class="yt-facade" type="button" aria-label="Play video: Fintech for food insecurity">
-<img src="https://i.ytimg.com/vi/aCUXMVrtdg0/hqdefault.jpg" alt="Fintech for food insecurity video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
+<img src="assets/yt-aCUXMVrtdg0.jpg" alt="Fintech for food insecurity video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8">
 <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:rgba(8,17,32,.75);border:1px solid rgba(125,211,252,.5);display:flex;align-items:center;justify-content:center;color:#7dd3fc;font-size:20px">▶</span></span>
 </button></div>
 <div style="padding:20px 22px;display:flex;flex-direction:column;gap:8px">
@@ -268,6 +284,15 @@ steps.forEach(function (step) {
     });
   });
 });
+var navToggle = document.querySelector('.nav-toggle');
+var navLinks = document.querySelector('.nav-links');
+function setNav(open) {
+  navLinks.classList.toggle('is-open', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle.textContent = open ? 'Close' : 'Menu';
+}
+navToggle.addEventListener('click', function () { setNav(!navLinks.classList.contains('is-open')); });
+navLinks.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
 </script>
 </body>
 </html>
